@@ -1,0 +1,12 @@
+{% extends 'main.html' %}
+{% block content %}
+<h2>Create Page</h2>
+
+<form action="createData/" method="post">
+    {%csrf_token%}
+    Name:<input name="name">
+    Title:<input name="title">
+    <input class="btn btn-primary" type="submit" value="Create">
+</form>
+
+{% endblock %}

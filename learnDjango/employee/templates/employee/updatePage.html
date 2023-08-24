@@ -1,0 +1,10 @@
+{% extends 'main.html' %}
+{% block content %}
+<h2>Update Page</h2>
+<form action="updateData/{{Employee.id}}" method="post">
+    {%csrf_token%}
+    Name:<input name="name" value="{{Employee.name}}"/>
+    Title:<input name="title" value="{{Employee.title}}"/>
+    <input class="btn btn-secondary" type="submit" value="Update">
+</form>
+{% endblock %}

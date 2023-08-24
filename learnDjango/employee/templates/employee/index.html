@@ -1,0 +1,31 @@
+{% extends 'main.html' %}
+{% block content %}
+<main>
+  <header>
+      <div class="container mt-5 text-center">
+            <p class="text-dark fs-1">Employee Management System</p>
+            <p class="text-muted ms-5 me-5 mt-3">Add some information about the Employee below, the author, or any other background context.link them off to some social networking sites or contact information.</p>
+            <a href="{%url 'create'%}"class="text-primary text-capitalize">add an Employee</a>
+      </div> 
+      <div class="container mt-5 mb-5">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+          {%for x in myEmployees %}
+          <div class="col">
+            <div class="card shadow-sm bg-dark opacity-60 text-white">
+            <div class="card-body">
+              <p class="card-title fs-4"> {{ x.name}}</p>
+              <p class="card-text text {% cycle 'bg-primary' 'bg-success' 'bg-danger' %} p-1"> {{ forloop.counter}}. {{x.title}}</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href = "{%url 'delete' id=x.id%}" type="button" class="btn btn-sm btn-outline-light">Delete</a>
+                  <a href="{%url 'update' id=x.id%}" type="button" class="btn btn-sm btn-outline-light">Update</a>
+                </div>
+              </div>
+            </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+{% endblock%}
+    
