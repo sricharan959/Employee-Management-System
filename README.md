@@ -13,5 +13,8 @@ Aim of this project is to provide an application for the management of company's
 ### Update an Existing Employee
 ### Read the Blog
 ### Featured Post
+## Framworks:
+Django 4.0
+Bootstrap v5.2
 
 
